@@ -5,7 +5,7 @@ import org.junit.*;
 
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Arrays;
 
 public class CollectionTestSuite {
     @Before
@@ -39,20 +39,20 @@ public class CollectionTestSuite {
         //Then
         Assert.assertTrue(evenNoArray.isEmpty());
     }
+
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        Random random = new Random();
         final ArrayList<Integer> numbersList = new ArrayList<>();
-        for (int i=0; i<50; i++) {
-            Integer number = random.nextInt()+1;
-            numbersList.add(number);
-        }
+        numbersList.addAll(Arrays.asList(1, 5, 6, 24, 15, 14, 20));
+        final ArrayList<Integer> evenNoArray = new ArrayList<>();
+        evenNoArray.addAll(Arrays.asList(6, 24, 14, 20));
         //When
-        final ArrayList<Integer> evenNoArray = exterminator.exterminate(numbersList);
-        System.out.println("Checking method result for non empty array.");
-
+        final ArrayList<Integer> generatedEvenNoArray = exterminator.exterminate(numbersList);
+        System.out.println("Checking method result for non empty array =" + numbersList);
+        //Then
+        Assert.assertEquals(evenNoArray, generatedEvenNoArray);
     }
 
 }
