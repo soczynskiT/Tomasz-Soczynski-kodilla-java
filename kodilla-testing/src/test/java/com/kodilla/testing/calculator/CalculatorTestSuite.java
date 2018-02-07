@@ -1,6 +1,5 @@
-package com.kodilla.testing.forum;
+package com.kodilla.testing.calculator;
 
-import com.kodilla.testing.calculator.Calculator;
 import org.junit.Assert;
 import org.junit.Test;
 

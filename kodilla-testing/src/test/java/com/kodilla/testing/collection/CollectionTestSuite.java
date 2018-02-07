@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum;
+package com.kodilla.testing.collection;
 
 import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
@@ -44,10 +44,8 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        final ArrayList<Integer> numbersList = new ArrayList<>();
-        numbersList.addAll(Arrays.asList(1, 5, 6, 24, 15, 14, 20));
-        final ArrayList<Integer> evenNoArray = new ArrayList<>();
-        evenNoArray.addAll(Arrays.asList(6, 24, 14, 20));
+        final ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(1, 5, 6, 24, 15, 14, 20));
+        final ArrayList<Integer> evenNoArray = new ArrayList<>(Arrays.asList(6, 24, 14, 20));
         //When
         final ArrayList<Integer> generatedEvenNoArray = exterminator.exterminate(numbersList);
         System.out.println("Checking method result for non empty array =" + numbersList);
