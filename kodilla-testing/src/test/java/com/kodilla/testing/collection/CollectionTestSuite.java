@@ -1,6 +1,5 @@
 package com.kodilla.testing.collection;
 
-import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
 
 
@@ -52,5 +51,4 @@ public class CollectionTestSuite {
         //Then
         Assert.assertEquals(evenNoArray, generatedEvenNoArray);
     }
-
 }
