@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Square implements Shape {
     final private String name = "Square";
-    private int field;
+    private double side;
 
-    public Square(int field) {
-        this.field = field;
+    public Square(double side) {
+        this.side = side;
     }
 
     @Override
@@ -16,8 +16,12 @@ public class Square implements Shape {
     }
 
     @Override
-    public int getField() {
-        return this.field;
+    public double getField() {
+        double field = 0;
+        if (this.side > 0) {
+            field = this.side * this.side;
+        }
+        return field;
     }
 
     @Override

@@ -4,10 +4,12 @@ import java.util.Objects;
 
 public class Triangle implements Shape {
     final private String name = "Triangle";
-    private int field;
+    private double side;
+    private double height;
 
-    public Triangle(int field) {
-        this.field = field;
+    public Triangle(double side, double height) {
+        this.side = side;
+        this.height = height;
     }
 
     @Override
@@ -16,8 +18,12 @@ public class Triangle implements Shape {
     }
 
     @Override
-    public int getField() {
-        return this.field;
+    public double getField() {
+        double field = 0;
+        if (this.side > 0 && this.height > 0) {
+            field = (this.side * this.height) / 2;
+        }
+        return field;
     }
 
     @Override

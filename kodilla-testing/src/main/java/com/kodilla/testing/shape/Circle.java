@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Circle implements Shape {
     final private String name = "Circle";
-    private int field;
+    private double radius;
 
-    public Circle(int field) {
-        this.field = field;
+    public Circle(int radius) {
+        this.radius = radius;
     }
 
     @Override
@@ -16,8 +16,12 @@ public class Circle implements Shape {
     }
 
     @Override
-    public int getField() {
-        return this.field;
+    public double getField() {
+        double field = 0;
+        if (this.radius > 0) {
+            field = 3.14 * this.radius * this.radius;
+        }
+        return field;
     }
 
     @Override

@@ -47,7 +47,7 @@ public class ShapeCollectorTestSuite {
     public void testAddFigureWithIncorrectFieldValue() {
         //When
         final ShapeCollector shapeCollector = new ShapeCollector();
-        final Shape circle = new Circle(-25);
+        final Shape circle = new Circle(-5);
         //When
         shapeCollector.addFigure(circle);
         //Then
@@ -59,7 +59,7 @@ public class ShapeCollectorTestSuite {
     public void testRemoveNotExistingFigure() {
         //Given
         final ShapeCollector shapeCollector = new ShapeCollector();
-        final Shape triangle = new Triangle(15);
+        final Shape triangle = new Triangle(15, 10);
         //When
         final boolean result = shapeCollector.removeFigure(triangle);
         //Then
@@ -85,7 +85,7 @@ public class ShapeCollectorTestSuite {
     public void testGetFigure() {
         //Given
         final ShapeCollector shapeCollector = new ShapeCollector();
-        final Shape triangle = new Triangle(15);
+        final Shape triangle = new Triangle(15, 6);
         shapeCollector.addFigure(triangle);
         //When
         final Shape retrievedShape = shapeCollector.getFigure(0);
@@ -98,7 +98,7 @@ public class ShapeCollectorTestSuite {
     public void testShowFigures() {
         //Given
         final ShapeCollector shapeCollector = new ShapeCollector();
-        final Shape triangle = new Triangle(15);
+        final Shape triangle = new Triangle(15, 11);
         final Shape circle = new Circle(20);
         final List<Shape> anArray = new ArrayList<>();
 
