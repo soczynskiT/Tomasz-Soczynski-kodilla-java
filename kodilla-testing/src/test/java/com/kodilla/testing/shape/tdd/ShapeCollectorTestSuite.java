@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShapeCollectorTestSuite {
-    public static int testCounter = 0;
+    private static int testCounter = 0;
 
     @BeforeClass
     public static void beforeAllTests() {
@@ -41,6 +41,7 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(1, shapeCollector.getFiguresArray().size());
     }
+
     /*Test of try adding figure with field value <=0 */
     @Test
     public void testAddFigureWithIncorrectFieldValue() {
