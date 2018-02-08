@@ -5,6 +5,7 @@ import org.junit.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class CollectionTestSuite {
     @Before
@@ -31,9 +32,9 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList() {
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        final ArrayList<Integer> anArray = new ArrayList<>();
+        final List<Integer> anArray = new ArrayList<>();
         //When
-        final ArrayList<Integer> evenNoArray = exterminator.exterminate(anArray);
+        final List<Integer> evenNoArray = exterminator.exterminate(anArray);
         System.out.println("Checking method result for empty array.");
         //Then
         Assert.assertTrue(evenNoArray.isEmpty());
@@ -43,10 +44,10 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        final ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(1, 5, 6, 24, 15, 14, 20));
-        final ArrayList<Integer> evenNoArray = new ArrayList<>(Arrays.asList(6, 24, 14, 20));
+        final List<Integer> numbersList = new ArrayList<>(Arrays.asList(1, 5, 6, 24, 15, 14, 20));
+        final List<Integer> evenNoArray = new ArrayList<>(Arrays.asList(6, 24, 14, 20));
         //When
-        final ArrayList<Integer> generatedEvenNoArray = exterminator.exterminate(numbersList);
+        final List<Integer> generatedEvenNoArray = exterminator.exterminate(numbersList);
         System.out.println("Checking method result for non empty array =" + numbersList);
         //Then
         Assert.assertEquals(evenNoArray, generatedEvenNoArray);
