@@ -42,18 +42,6 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals(1, shapeCollector.getFiguresArray().size());
     }
 
-    /*Test of try adding figure with field value <=0 */
-    @Test
-    public void testAddFigureWithIncorrectFieldValue() {
-        //When
-        final ShapeCollector shapeCollector = new ShapeCollector();
-        final Shape circle = new Circle(-5);
-        //When
-        shapeCollector.addFigure(circle);
-        //Then
-        Assert.assertEquals(0, shapeCollector.getFiguresArray().size());
-    }
-
     /*Test if trying to remove not existing shape return false */
     @Test
     public void testRemoveNotExistingFigure() {

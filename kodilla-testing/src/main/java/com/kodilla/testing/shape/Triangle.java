@@ -8,6 +8,9 @@ public class Triangle implements Shape {
     private double height;
 
     public Triangle(double side, double height) {
+        if (side <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Illegal height or side value.");
+        }
         this.side = side;
         this.height = height;
     }
@@ -19,11 +22,7 @@ public class Triangle implements Shape {
 
     @Override
     public double getField() {
-        double field = 0;
-        if (this.side > 0 && this.height > 0) {
-            field = (this.side * this.height) / 2;
-        }
-        return field;
+        return (this.side * this.height) / 2;
     }
 
     @Override

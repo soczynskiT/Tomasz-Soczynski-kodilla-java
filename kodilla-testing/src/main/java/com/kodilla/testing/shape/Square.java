@@ -7,6 +7,9 @@ public class Square implements Shape {
     private double side;
 
     public Square(double side) {
+        if (side <= 0) {
+            throw new IllegalArgumentException("Illegal side value: " + side);
+        }
         this.side = side;
     }
 
@@ -17,11 +20,7 @@ public class Square implements Shape {
 
     @Override
     public double getField() {
-        double field = 0;
-        if (this.side > 0) {
-            field = this.side * this.side;
-        }
-        return field;
+        return this.side * this.side;
     }
 
     @Override

@@ -7,6 +7,9 @@ public class Circle implements Shape {
     private double radius;
 
     public Circle(int radius) {
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Illegal radius value: " + radius);
+        }
         this.radius = radius;
     }
 
@@ -17,11 +20,7 @@ public class Circle implements Shape {
 
     @Override
     public double getField() {
-        double field = 0;
-        if (this.radius > 0) {
-            field = 3.14 * this.radius * this.radius;
-        }
-        return field;
+        return 3.14 * this.radius * this.radius;
     }
 
     @Override
