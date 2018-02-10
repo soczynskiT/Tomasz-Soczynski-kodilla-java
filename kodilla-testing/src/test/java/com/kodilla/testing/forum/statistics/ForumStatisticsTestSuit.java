@@ -3,6 +3,8 @@ package com.kodilla.testing.forum.statistics;
 import org.junit.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.Mockito.mock;
@@ -37,8 +39,7 @@ public class ForumStatisticsTestSuit {
     public void testCalculateAdvStatisticsForNullPostsCount() {
         //Given
         Statistics statisticMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<>();
-        usersNames.add("User");
+        List<String> usersNames = Arrays.asList("User");
         int postsQuantity = 0;
         int commentsQuantity = 1;
 
@@ -59,8 +60,7 @@ public class ForumStatisticsTestSuit {
     public void testCalculateAdvStatisticsForRequestedPostsCount() {
         //Given
         Statistics statisticMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<>();
-        usersNames.add("User");
+        List<String> usersNames = Arrays.asList("User");
         int postsQuantity = 1000;
         int commentsQuantity = 1000;
 
@@ -81,8 +81,7 @@ public class ForumStatisticsTestSuit {
     public void testCalculateAdvStatisticsForNullCommentsCount() {
         //Given
         Statistics statisticMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<>();
-        usersNames.add("User");
+        List<String> usersNames = Arrays.asList("User");
         int postsQuantity = 10;
         int commentsQuantity = 0;
 
@@ -103,8 +102,7 @@ public class ForumStatisticsTestSuit {
     public void testCalculateAdvStatisticsCommentsNoLessThanPostsNoCount() {
         //Given
         Statistics statisticMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<>();
-        usersNames.add("User");
+        List<String> usersNames = Arrays.asList("User");
         int postsQuantity = 10;
         int commentsQuantity = 1;
 
@@ -125,8 +123,7 @@ public class ForumStatisticsTestSuit {
     public void testCalculateAdvStatisticsCommentsNoBiggerThanPostsNoCount() {
         //Given
         Statistics statisticMock = mock(Statistics.class);
-        List<String> usersNames = new ArrayList<>();
-        usersNames.add("User");
+        List<String> usersNames = Arrays.asList("User");
         int postsQuantity = 1;
         int commentsQuantity = 10;
 
@@ -170,7 +167,7 @@ public class ForumStatisticsTestSuit {
         Statistics statisticMock = mock(Statistics.class);
         List<String> usersNames = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            usersNames.add("user");
+            usersNames.add("user" + i);
         }
         int postsQuantity = 10;
         int commentsQuantity = 1;
