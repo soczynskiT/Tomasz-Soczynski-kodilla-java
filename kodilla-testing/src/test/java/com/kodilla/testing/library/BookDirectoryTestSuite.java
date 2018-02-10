@@ -1,7 +1,6 @@
 package com.kodilla.testing.library;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +15,7 @@ import static org.mockito.Mockito.when;
 
 
 public class BookDirectoryTestSuite {
+    private static int testCounter = 1;
 
     private List<Book> generateListOfNBooks(int booksQuantity) {
         List<Book> resultList = new ArrayList<>();
@@ -24,6 +24,27 @@ public class BookDirectoryTestSuite {
             resultList.add(theBook);
         }
         return resultList;
+    }
+
+    @BeforeClass
+    public static void beforeClass() {
+        System.out.println("Starting tests...");
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        System.out.println("End of all tests...");
+    }
+
+    @Before
+    public void before() {
+        System.out.println("----------\nStart of test #" + testCounter);
+    }
+
+    @After
+    public void after() {
+        System.out.println("End of test #" + testCounter + "\n----------");
+        testCounter++;
     }
 
     @Test
@@ -141,12 +162,12 @@ public class BookDirectoryTestSuite {
         Book book1 = new Book("Secrets of Alamo", "John Smith", 2008, true);
         Book book2 = new Book("Secretaries and Directors", "Dilbert Michigan", 2012, true);
         List<Book> resultListOfBooks = new ArrayList<>(Arrays.asList(book1, book2));
-        when(libraryDatabaseMock.listBooksWithCondition(anyString())).thenReturn(resultListOfBooks);
+        when(libraryDatabaseMock.listBooksWithCondition("Secret")).thenReturn(resultListOfBooks);
         //When
         boolean resultRentABook = bookLibrary.rentABook(aLibraryUser, book);
         //Then
         Assert.assertFalse(resultRentABook);
-        Assert.assertFalse(bookLibrary.listBooksWithCondition(anyString()).contains(book));
+        Assert.assertFalse(bookLibrary.listBooksWithCondition("Secret").contains(book));
     }
 
     @Test

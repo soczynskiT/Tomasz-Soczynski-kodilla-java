@@ -26,10 +26,27 @@ public class BookLibrary {
     }
 
     public boolean rentABook(LibraryUser libraryUser, Book book) {
-        return true;
+        boolean resultRentABook = false;
+        List<Book> searchResultList = listBooksWithCondition(book.getTitle());
+        if (searchResultList.contains(book) && book.getIsAvailable()) {
+            book.setAvailable(false);
+            resultRentABook = true;
+            /*Place for code that will add information to database about rented book by libraryUser.
+            Another team is preparing database that implements interface with method listBookInHandsOf.
+             */
+        }
+        return resultRentABook;
     }
 
     public int returnBooks(LibraryUser libraryUser) {
-        return 10;
+        int returnedBooksCounter = 0;
+        List<Book> usersRentedBooksList = libraryDatabase.listBooksInHandsOf(libraryUser);
+        if (!usersRentedBooksList.isEmpty()) {
+            for (Book aBook : usersRentedBooksList) {
+                aBook.setAvailable(true);
+                returnedBooksCounter++;
+            }
+        }
+        return returnedBooksCounter;
     }
 }
