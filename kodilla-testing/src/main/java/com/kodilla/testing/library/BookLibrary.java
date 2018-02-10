@@ -21,8 +21,7 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        List<Book> booksInHandsOfUser = libraryDatabase.listBooksInHandsOf(libraryUser);
-        return booksInHandsOfUser;
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 
     public boolean rentABook(LibraryUser libraryUser, Book book) {
@@ -45,6 +44,9 @@ public class BookLibrary {
             for (Book aBook : usersRentedBooksList) {
                 aBook.setAvailable(true);
                 returnedBooksCounter++;
+            /*Place for code that will add information to database about returned book by libraryUser.
+            Another team is preparing database that implements interface with method listBookInHandsOf.
+            */
             }
         }
         return returnedBooksCounter;
