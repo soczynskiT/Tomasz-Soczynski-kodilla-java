@@ -100,7 +100,7 @@ public class BookDirectoryTestSuite {
         //When
         List<Book> theListBooksInHandsOfUSer = bookLibrary.listBooksInHandsOf(libraryUser);
         //Then
-        Assert.assertEquals(0, theListBooksInHandsOfUSer.size());
+        Assert.assertTrue(theListBooksInHandsOfUSer.isEmpty());
     }
 
     @Test
@@ -141,12 +141,12 @@ public class BookDirectoryTestSuite {
         Book book1 = new Book("Secrets of Alamo", "John Smith", 2008, true);
         Book book2 = new Book("Secretaries and Directors", "Dilbert Michigan", 2012, true);
         List<Book> resultListOfBooks = new ArrayList<>(Arrays.asList(book1, book2));
-        when(libraryDatabaseMock.listBooksWithCondition(anyString())).thenReturn(resultListOfBooks);
+        when(libraryDatabaseMock.listBooksWithCondition("Secret")).thenReturn(resultListOfBooks);
         //When
         boolean resultRentABook = bookLibrary.rentABook(aLibraryUser, book);
         //Then
         Assert.assertFalse(resultRentABook);
-        Assert.assertFalse(bookLibrary.listBooksWithCondition(anyString()).contains(book));
+        Assert.assertFalse(bookLibrary.listBooksWithCondition("Secret").contains(book));
     }
 
     @Test
