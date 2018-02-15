@@ -25,7 +25,6 @@ public class StreamMain {
                 .forEach(System.out::println);
 
         /*Checking every filter */
-
         System.out.println("\nFiltering users by sex = 'M':");
         final List<ForumUser> listSortedBySex = theForum.getUserList().stream()
                 .filter(f -> f.getSex() == 'M')
