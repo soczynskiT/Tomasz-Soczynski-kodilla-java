@@ -1,4 +1,4 @@
-package com.kodilla.stream.forumUser;
+package com.kodilla.stream.forumuser;
 
 import java.util.ArrayList;
 import java.util.List;

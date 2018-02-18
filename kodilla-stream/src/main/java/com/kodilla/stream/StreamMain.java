@@ -1,8 +1,8 @@
 package com.kodilla.stream;
 
 
-import com.kodilla.stream.forumUser.Forum;
-import com.kodilla.stream.forumUser.ForumUser;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -29,21 +29,21 @@ public class StreamMain {
         final List<ForumUser> listSortedBySex = theForum.getUserList().stream()
                 .filter(f -> f.getSex() == 'M')
                 .collect(Collectors.toList());
-        listSortedBySex.stream()
+        listSortedBySex
                 .forEach(System.out::println);
 
         System.out.println("\nFiltering users by years old >= 20:");
         final List<ForumUser> listSortedByYears = listSortedBySex.stream()
                 .filter(f -> LocalDate.from(f.getBirthDate()).until(LocalDate.now(), ChronoUnit.YEARS) >= 20)
                 .collect(Collectors.toList());
-        listSortedByYears.stream()
+        listSortedByYears
                 .forEach(System.out::println);
 
         System.out.println("\nFiltering users by posts no >=1:");
         final List<ForumUser> listSortedByPostsNo = listSortedByYears.stream()
                 .filter(f -> f.getPostsNo() >= 1)
                 .collect(Collectors.toList());
-        listSortedByPostsNo.stream()
+        listSortedByPostsNo
                 .forEach(System.out::println);
 
         System.out.println("\nChanging filtered list to Map:");
