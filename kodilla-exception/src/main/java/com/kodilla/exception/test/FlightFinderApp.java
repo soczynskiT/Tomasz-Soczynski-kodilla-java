@@ -2,13 +2,17 @@ package com.kodilla.exception.test;
 
 public class FlightFinderApp {
     public static void main(String args[]) {
+        final FlightSearchEngine searchEngine = new FlightSearchEngine();
+
+        searchEngine.addAirportToDataBase("Berlin", true);
+        searchEngine.addAirportToDataBase("Cracow", true);
+        searchEngine.addAirportToDataBase("London", false);
+        searchEngine.addAirportToDataBase("Warsaw", false);
 
         final Flight flight = new Flight("London", "Warsaw");
         final Flight flight1 = new Flight("Warsaw", "Berlin");
         final Flight flight2 = new Flight("Berlin", "Cracow");
         final Flight flight3 = new Flight("Szczecin", "Berlin");
-
-        final FlightSearchEngine searchEngine = new FlightSearchEngine();
 
         try {
             System.out.println("Route London - Warsaw");

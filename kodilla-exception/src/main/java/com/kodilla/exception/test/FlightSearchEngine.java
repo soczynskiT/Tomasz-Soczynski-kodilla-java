@@ -4,17 +4,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FlightSearchEngine {
+    final private Map<String, Boolean> airportsMap = new HashMap<>();
+
+    public void addAirportToDataBase(String airport, Boolean isAvailable) {
+        airportsMap.put(airport, isAvailable);
+    }
+
     public void findFlight(Flight flight) throws RouteNotFoundException {
-        Map<String, Boolean> flightsMap = new HashMap<>();
-        flightsMap.put("Berlin", true);
-        flightsMap.put("Cracow", true);
-        flightsMap.put("London", false);
-        flightsMap.put("Warsaw", false);
         final String airportArr = flight.getArrivalAirport();
         final String airportDep = flight.getDepartureAirport();
 
-        if (flightsMap.containsKey(airportArr) && flightsMap.containsKey(airportDep)) {
-            if (flightsMap.get(airportArr) && flightsMap.get(airportDep)) {
+        if (airportsMap.containsKey(airportArr) && airportsMap.containsKey(airportDep)) {
+            if (airportsMap.get(airportArr) && airportsMap.get(airportDep)) {
                 System.out.println("Route founded !!!");
             } else {
                 System.out.println("Route founded but one or both airports are temporary not available.");
