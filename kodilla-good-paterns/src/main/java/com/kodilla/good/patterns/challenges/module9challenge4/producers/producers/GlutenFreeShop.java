@@ -10,7 +10,7 @@ public class GlutenFreeShop implements Producer {
 
     @Override
     public void process() {
-        System.out.println("Order confirmed, processing - method 3");
+        System.out.println("Request of order confirmed - processing - method 3");
     }
 
     @Override

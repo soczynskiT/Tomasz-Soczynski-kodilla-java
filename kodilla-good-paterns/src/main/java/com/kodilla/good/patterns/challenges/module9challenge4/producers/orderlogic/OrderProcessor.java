@@ -21,8 +21,10 @@ public class OrderProcessor {
         if (orderAvailabilityConfirmation()) {
             orderRequest.getProducer().process();
             isOrderConfirmed = true;
+            System.out.println("Order done with success");
         } else {
             isOrderConfirmed = false;
+            System.out.println("Order refused");
         }
         return new OrderDTO(orderRequest, isOrderConfirmed);
 

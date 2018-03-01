@@ -12,7 +12,7 @@ public class ExtraFoodShop implements Producer {
 
     @Override
     public void process() {
-        System.out.println("Order confirmed, processing - method 2");
+        System.out.println("Request of order confirmed - processing - method 2");
     }
 
 
