@@ -4,5 +4,6 @@ include 'kodilla-exception'
 include 'kodilla-good-paterns'
 include 'kodilla-spring-intro'
 include 'kodilla-spring'
+include 'kodilla-spring-web'
 
 
