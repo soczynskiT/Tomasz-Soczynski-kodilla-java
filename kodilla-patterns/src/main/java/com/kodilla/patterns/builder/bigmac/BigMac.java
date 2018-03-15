@@ -18,7 +18,7 @@ public final class BigMac {
         private Roll roll;
         private int burgers;
         private Sauce sauce;
-        private List<String> burgerIngredients = new ArrayList<>();
+        private final List<String> burgerIngredients = new ArrayList<>();
 
         BigMacBuilder roll(boolean withSesame) {
             this.roll = new Roll(withSesame);

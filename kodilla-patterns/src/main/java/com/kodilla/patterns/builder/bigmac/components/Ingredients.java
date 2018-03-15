@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Ingredients {
+public final class Ingredients {
     public static final String LETTUCE = "LETTUCE";
     public static final String ONION = "ONION";
     public static final String BEACON = "BEACON";

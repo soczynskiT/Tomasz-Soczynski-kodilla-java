@@ -1,9 +1,9 @@
 package com.kodilla.patterns.builder.bigmac.components;
 
-public class Roll {
+public final class Roll {
     private final boolean withSesame;
 
-    public Roll(boolean withSesame) {
+    public Roll(final boolean withSesame) {
         this.withSesame = withSesame;
     }
 

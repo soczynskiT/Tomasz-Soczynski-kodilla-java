@@ -35,12 +35,12 @@ public class BigMacTestSuite {
     @Test
     public void testCreateBigMacWithoutRoll() {
         //Given
-        BigMac bigMac = new BigMac.BigMacBuilder()
+        final BigMac bigMac = new BigMac.BigMacBuilder()
                 .burgers(2)
                 .sauce(Sauce.STANDARD)
                 .build();
         //When
-        BigMac resultBigMac = null;
+        final BigMac resultBigMac = null;
 
         //Then
         Assert.assertEquals(resultBigMac, bigMac);
@@ -49,7 +49,7 @@ public class BigMacTestSuite {
     @Test
     public void testCreateBigMacWithUnavailableComponents() {
         //Given
-        BigMac bigMac = new BigMac.BigMacBuilder()
+        final BigMac bigMac = new BigMac.BigMacBuilder()
                 .roll(true)
                 .burgers(0)
                 .sauce("Mayonesse")
