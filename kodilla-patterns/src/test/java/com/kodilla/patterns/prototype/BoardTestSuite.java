@@ -14,13 +14,13 @@ public class BoardTestSuite {
                 .limit(10)
                 .forEach(n -> listToDo.getTasks().add(new Task("To Do Task number " + n)));
 
-        //creating the TaskList for tasks in progress
+        //creating the TaskList for task in progress
         TasksList listInProgress = new TasksList("In Progress Tasks");
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
                 .forEach(n -> listInProgress.getTasks().add(new Task("In Progress Task number " + n)));
 
-        //creating the TaskList for done tasks
+        //creating the TaskList for done task
         TasksList listDone = new TasksList("Done Tasks");
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
