@@ -22,11 +22,11 @@ public class TaskListDaoTestSuite {
         //Given
         final String testListName = "Important list";
         final String TestListDescription = "Some description.";
-        TaskList testTaskList = new TaskList(testListName, TestListDescription);
+        final TaskList testTaskList = new TaskList(testListName, TestListDescription);
 
         //When
         taskListDao.save(testTaskList);
-        List<TaskList> allTasksLists = taskListDao.findByListName(testListName);
+        final List<TaskList> allTasksLists = taskListDao.findByListName(testListName);
 
         //Then
         Assert.assertEquals(1, allTasksLists.size());
