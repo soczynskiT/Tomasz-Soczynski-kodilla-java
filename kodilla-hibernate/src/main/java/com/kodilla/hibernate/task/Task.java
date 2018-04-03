@@ -12,7 +12,7 @@ public final class Task {
     private Date created;
     private int duration;
 
-    public Task() {
+    private Task() {
     }
 
     public Task(String description, int duration) {
@@ -23,7 +23,6 @@ public final class Task {
 
     @Id
     @GeneratedValue
-    @NotNull
     @Column(name = "ID", unique = true)
     public int getId() {
         return id;
