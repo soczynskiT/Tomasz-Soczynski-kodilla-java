@@ -6,8 +6,16 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "TASKLISTS")
 public class TaskList {
-    private long id;
+    @Id
+    @GeneratedValue
+    @Column(name = "ID", unique = true)
+    private Long id;
+
+    @NotNull
+    @Column(name = "LISTNAME")
     private String listName;
+
+    @Column(name = "DESCRIPTION")
     private String description;
 
     public TaskList(String listName, String description) {
@@ -19,20 +27,14 @@ public class TaskList {
     private TaskList() {
     }
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", unique = true)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    @NotNull
-    @Column(name = "LISTNAME")
     public String getListName() {
         return listName;
     }
 
-    @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }
@@ -41,7 +43,7 @@ public class TaskList {
         this.description = description;
     }
 
-    private void setId(long id) {
+    private void setId(Long id) {
         this.id = id;
     }
 

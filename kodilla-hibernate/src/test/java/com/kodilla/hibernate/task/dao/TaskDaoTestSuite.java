@@ -29,7 +29,7 @@ public class TaskDaoTestSuite {
         taskDao.save(task);
 
         //Then
-        final long id = task.getId();
+        final Long id = task.getId();
         final Task readTask = taskDao.findOne(id);
         Assert.assertEquals(id, readTask.getId());
 
@@ -52,23 +52,6 @@ public class TaskDaoTestSuite {
 
         //CleanUp
         final long id = readTasks.get(0).getId();
-        taskDao.delete(id);
-    }
-
-    @Test
-    public void testTaskDaoSaveWithFinancialDetails() {
-        //Given
-        final Task task = new Task(DESCRIPTION, 30);
-        task.setTaskFinancialDetails(new TaskFinancialDetails(new BigDecimal(120), false));
-
-        //When
-        taskDao.save(task);
-        final long id = task.getId();
-
-        //Then
-        Assert.assertNotEquals(0, id);
-
-        //CleanUp
         taskDao.delete(id);
     }
 }

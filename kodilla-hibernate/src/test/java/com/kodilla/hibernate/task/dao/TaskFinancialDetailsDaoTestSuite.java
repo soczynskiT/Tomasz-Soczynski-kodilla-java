@@ -7,34 +7,30 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TaskFinancialDetailsDaoTestSuite {
-
     @Autowired
-    private TaskFinancialDetailsDao taskFinancialDetailsDao;
+    TaskFinancialDetailsDao taskFinancialDetailsDao;
 
     @Test
     public void testFindByPaid() {
         //Given
-        final TaskFinancialDetails taskFinancialDetails =
+        TaskFinancialDetails taskFinancialDetails =
                 new TaskFinancialDetails(new BigDecimal(115), false);
-
         taskFinancialDetailsDao.save(taskFinancialDetails);
-        final long id = taskFinancialDetails.getId();
+        Long id = taskFinancialDetails.getId();
 
         //When
-        final List<TaskFinancialDetails> resultList = taskFinancialDetailsDao.findByPaid(false);
+        List<TaskFinancialDetails> resultList = taskFinancialDetailsDao.findByPaid(false);
 
         //Then
         Assert.assertEquals(1, resultList.size());
 
         //CleanUp
         taskFinancialDetailsDao.delete(id);
-
     }
 }

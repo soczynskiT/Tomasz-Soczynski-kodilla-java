@@ -1,16 +1,30 @@
 package com.kodilla.hibernate.task;
 
-        import javax.persistence.*;
-        import javax.validation.constraints.NotNull;
-        import java.util.Date;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 @Table(name = "TASKS")
 public final class Task {
-    private long id;
+
+    @Id
+    @GeneratedValue
+    @Column(name = "ID", unique = true)
+    private Long id;
+
+    @Column(name = "DESCRIPTION")
     private String description;
+
+    @NotNull
+    @Column(name = "CREATED")
     private Date created;
+
+    @Column(name = "DURATION")
     private int duration;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "TASK_FINANCIAL_DETAILS")
     private TaskFinancialDetails taskFinancialDetails;
 
     private Task() {
@@ -22,36 +36,27 @@ public final class Task {
         this.duration = duration;
     }
 
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", unique = true)
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }
 
-    @NotNull
-    @Column(name="CREATED")
     public Date getCreated() {
         return created;
     }
 
-    @Column(name="DURATION")
     public int getDuration() {
         return duration;
     }
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "TASKS_FINANCIALS_ID")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }
 
-    private void setId(long id) {
+    private void setId(Long id) {
         this.id = id;
     }
 
