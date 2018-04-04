@@ -7,7 +7,7 @@ package com.kodilla.hibernate.task;
 @Entity
 @Table(name = "TASKS")
 public final class Task {
-    private int id;
+    private long id;
     private String description;
     private Date created;
     private int duration;
@@ -25,7 +25,7 @@ public final class Task {
     @Id
     @GeneratedValue
     @Column(name = "ID", unique = true)
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -51,7 +51,7 @@ public final class Task {
         return taskFinancialDetails;
     }
 
-    private void setId(int id) {
+    private void setId(long id) {
         this.id = id;
     }
 

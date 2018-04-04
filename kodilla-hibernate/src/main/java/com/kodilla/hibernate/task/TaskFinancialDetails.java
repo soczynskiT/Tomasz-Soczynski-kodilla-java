@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "TASKS_FINANCIALS")
 public class TaskFinancialDetails {
-    private int id;
+    private long id;
     private BigDecimal price;
     private boolean paid;
 
@@ -23,7 +23,7 @@ public class TaskFinancialDetails {
     @GeneratedValue
     @NotNull
     @Column(name = "ID", unique = true)
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -37,7 +37,7 @@ public class TaskFinancialDetails {
         return paid;
     }
 
-    private void setId(int id) {
+    private void setId(long id) {
         this.id = id;
     }
 
