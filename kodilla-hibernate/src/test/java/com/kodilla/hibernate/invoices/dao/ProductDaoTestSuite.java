@@ -1,5 +1,6 @@
 package com.kodilla.hibernate.invoices.dao;
 
+import com.kodilla.hibernate.invoices.Invoice;
 import com.kodilla.hibernate.invoices.Item;
 import com.kodilla.hibernate.invoices.Product;
 import org.junit.Assert;

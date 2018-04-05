@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.Arrays;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -20,6 +22,7 @@ public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
 
+    @Transactional
     @Test
     public void testInvoiceDaoSave() {
         //Given
@@ -54,5 +57,6 @@ public class InvoiceDaoTestSuite {
 
         //Clean
         invoiceDao.delete(testInvoiceId);
+
     }
 }
