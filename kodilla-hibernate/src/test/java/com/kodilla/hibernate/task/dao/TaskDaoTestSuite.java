@@ -51,7 +51,8 @@ public class TaskDaoTestSuite {
         Assert.assertEquals(1, readTasks.size());
 
         //CleanUp
-        final long id = readTasks.get(0).getId();
+        final Long id = readTasks.get(0).getId();
         taskDao.delete(id);
     }
+
 }
