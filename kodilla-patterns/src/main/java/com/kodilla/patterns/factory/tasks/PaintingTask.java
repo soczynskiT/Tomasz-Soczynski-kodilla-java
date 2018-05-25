@@ -30,6 +30,7 @@ public class PaintingTask implements Task {
     public boolean isTaskExecuted() {
         return isTaskExecuted;
     }
+
     private void setTaskStatusExecuted() {
         this.isTaskExecuted = true;
     }

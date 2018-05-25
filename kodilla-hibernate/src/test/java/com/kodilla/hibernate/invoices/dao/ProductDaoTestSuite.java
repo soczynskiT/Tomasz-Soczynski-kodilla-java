@@ -33,7 +33,7 @@ public class ProductDaoTestSuite {
         //When
         productDao.save(testProduct);
         final Long testProductId = testProduct.getId();
-        final Product readProduct= productDao.findOne(testProductId);
+        final Product readProduct = productDao.findOne(testProductId);
 
         //Then
         Assert.assertNotEquals(null, readProduct);

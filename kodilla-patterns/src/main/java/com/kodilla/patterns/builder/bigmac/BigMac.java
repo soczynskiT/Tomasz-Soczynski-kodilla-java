@@ -54,10 +54,9 @@ public final class BigMac {
         }
 
         BigMac build() {
-            if(roll != null) {
+            if (roll != null) {
                 return new BigMac(roll, burgers, sauce, burgerIngredients);
-            }
-            else {
+            } else {
                 System.out.println("At least roll is required to create BigMac");
                 return null;
             }

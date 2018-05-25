@@ -20,7 +20,7 @@ public class FlightSearcherLogic {
     public Set<Airport> showAllFlightsFrom(Airport departureAirport) {
         final Set<Airport> connections = flightsDatabase.getFlightsDatabase().entrySet().stream()
                 .filter(entry -> entry.getKey().equals(departureAirport))
-                .flatMap(entry-> entry.getValue().stream())
+                .flatMap(entry -> entry.getValue().stream())
                 .collect(Collectors.toSet());
         return connections;
     }
@@ -49,9 +49,9 @@ public class FlightSearcherLogic {
         final Set<Airport> possibleFlights = flightsDatabase.getFlightsDatabase().entrySet().stream()
                 .filter(key -> key.getKey().equals(departureAirport))
                 .map(Map.Entry::getValue)
-                .filter(value-> value.contains(changeoverAirport))
+                .filter(value -> value.contains(changeoverAirport))
                 .flatMap(Collection::stream)
-                .filter(airport-> airport.equals(changeoverAirport))
+                .filter(airport -> airport.equals(changeoverAirport))
                 .flatMap(airport -> airport.getConnectionsSet().stream())
                 .collect(Collectors.toSet());
 

@@ -60,8 +60,8 @@ public class Checkers {
                 throw new IllegalStateException("There is no player Two specified");
             }
             boolean white = false, black = false;
-            for(int x = Board.MIN_INDEX; x <= Board.MAX_INDEX; x++) {
-                for(int y = Board.MIN_INDEX; y <= Board.MAX_INDEX; y++) {
+            for (int x = Board.MIN_INDEX; x <= Board.MAX_INDEX; x++) {
+                for (int y = Board.MIN_INDEX; y <= Board.MAX_INDEX; y++) {
                     Figure figure = board.getFigure(x, y);
                     if (figure != null) {
                         if (figure.getColor().equals(Figure.BLACK)) {

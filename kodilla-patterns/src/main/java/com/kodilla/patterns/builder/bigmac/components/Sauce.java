@@ -10,8 +10,7 @@ public final class Sauce {
     public Sauce(final String name) {
         if (name.equals(BARBECUE) || name.equals(STANDARD) || name.equals(THOUSAND_ISLANDS)) {
             this.name = name;
-        }
-        else {
+        } else {
             System.out.println("Sauce not available");
             this.name = "none";
         }

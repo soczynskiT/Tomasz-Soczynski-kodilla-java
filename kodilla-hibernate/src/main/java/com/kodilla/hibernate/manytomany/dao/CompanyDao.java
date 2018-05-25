@@ -12,4 +12,6 @@ import java.util.List;
 @Repository
 public interface CompanyDao extends CrudRepository<Company, Long> {
     List<Company> retrieveCompaniesWithNameBegins(@Param("ABC") final String nameBeginning);
+
+    List<Company> retrieveCompaniesWhichNamesIncludes(@Param("word") final String word);
 }

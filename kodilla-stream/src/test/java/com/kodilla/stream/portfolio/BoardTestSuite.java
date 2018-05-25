@@ -139,7 +139,7 @@ public class BoardTestSuite {
                 .sum();
         final double average = daysSum / tasksNo;
         //Then
-        Assert.assertTrue(average == 23.0/3.0);
+        Assert.assertTrue(average == 23.0 / 3.0);
     }
 
     /*Second method with "star" - one stream*/
@@ -158,6 +158,6 @@ public class BoardTestSuite {
                 .mapToDouble(d -> LocalDate.from(d.getCreated()).until(LocalDate.now(), ChronoUnit.DAYS))
                 .average().getAsDouble();
         //Then
-        Assert.assertTrue(average == 23.0/3.0);
+        Assert.assertTrue(average == 23.0 / 3.0);
     }
 }

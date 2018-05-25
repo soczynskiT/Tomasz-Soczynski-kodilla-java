@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class ExceptionModuleRunner {
 
-    public static void main (String args[]) {
+    public static void main(String args[]) {
         final FileReaderWithoutHandling fileReader2 = new FileReaderWithoutHandling();
         try {
             fileReader2.readFile();

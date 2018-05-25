@@ -29,8 +29,8 @@ public final class Calculator {
 
     public double div(double a, double b) {
 
-            final double result = a / b;
-            display.displayValue(result);
-            return result;
+        final double result = a / b;
+        display.displayValue(result);
+        return result;
     }
 }

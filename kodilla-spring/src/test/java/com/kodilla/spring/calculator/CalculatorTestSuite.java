@@ -32,12 +32,13 @@ public class CalculatorTestSuite {
         Assert.assertTrue(50 == mulResult);
         Assert.assertTrue(2 == divResult);
     }
+
     @Test
     public void testDivByZeroException() {
         //When
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-        final Calculator calculator = (Calculator)context.getBean("calculator");
+        final Calculator calculator = (Calculator) context.getBean("calculator");
         final double a = 10;
         final double b = 0;
         //When

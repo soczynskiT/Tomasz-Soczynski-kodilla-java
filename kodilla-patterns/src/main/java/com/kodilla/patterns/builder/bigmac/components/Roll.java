@@ -8,11 +8,10 @@ public final class Roll {
     }
 
     private String getRollType() {
-        if(withSesame) {
+        if (withSesame) {
             return "roll with sesame";
-        }
-        else {
-         return "roll without sesame";
+        } else {
+            return "roll without sesame";
         }
     }
 

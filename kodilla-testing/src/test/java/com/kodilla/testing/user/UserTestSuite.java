@@ -1,24 +1,30 @@
 package com.kodilla.testing.user;
+
 import org.junit.*;
+
 public class UserTestSuite {
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: begin");
     }
+
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
+
     @BeforeClass
     public static void beforeClass() {
         System.out.println("Test Suite: begin");
     }
+
     @AfterClass
     public static void afterClass() {
         System.out.println("Test Suite: end");
     }
+
     @Test
-    public void testCaseUsername(){
+    public void testCaseUsername() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When
@@ -27,8 +33,9 @@ public class UserTestSuite {
         //Then
         Assert.assertEquals("theForumUser", result);
     }
+
     @Test
-    public void testCaseRealName(){
+    public void testCaseRealName() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
         //When

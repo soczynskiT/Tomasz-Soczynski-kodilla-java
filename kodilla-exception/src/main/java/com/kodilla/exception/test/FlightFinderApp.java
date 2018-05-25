@@ -23,8 +23,7 @@ public class FlightFinderApp {
             searchEngine.findFlight(flight2);
             System.out.println("\nRoute Szczecin - Berlin");
             searchEngine.findFlight(flight3);
-        }
-        catch (RouteNotFoundException rex) {
+        } catch (RouteNotFoundException rex) {
             System.out.println("Error: " + rex.getMessage());
         }
 

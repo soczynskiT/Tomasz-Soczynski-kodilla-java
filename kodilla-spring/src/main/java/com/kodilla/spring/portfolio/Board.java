@@ -27,6 +27,7 @@ public final class Board {
     public void addDoneTask(String task) {
         doneList.addTask(task);
     }
+
     public List<TaskList> getAllTasks() {
         return new ArrayList<>(Arrays.asList(toDoList, inProgressList, doneList));
     }

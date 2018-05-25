@@ -13,7 +13,7 @@ public class BoardTestSuite {
         final String inProgressTask = "Some task still in progress";
         final String doneTask = "This task has been done";
 
-        Board board = (Board)context.getBean("getBoard");
+        Board board = (Board) context.getBean("getBoard");
 
         //When
         board.addToDoTask(toDoTask);
@@ -21,7 +21,7 @@ public class BoardTestSuite {
         board.addDoneTask(doneTask);
         //Then
         board.getAllTasks().stream()
-                .flatMap(s-> s.getTasks().stream())
+                .flatMap(s -> s.getTasks().stream())
                 .forEach(System.out::println);
     }
 }

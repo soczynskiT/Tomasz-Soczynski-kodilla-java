@@ -20,7 +20,7 @@ public class FlightSearchEngine {
             } else {
                 System.out.println("Route founded but one or both airports are temporary not available.");
             }
-        }
-        else throw new RouteNotFoundException("One or both airports do not exist in database. Route not possible to find");
+        } else
+            throw new RouteNotFoundException("One or both airports do not exist in database. Route not possible to find");
     }
 }

@@ -13,8 +13,7 @@ public class FirstChallenge {
                 result = a / b;
                 divideInfo = "Correct";
                 return result;
-            }
-            else {
+            } else {
                 throw new ArithmeticException();
             }
         } catch (ArithmeticException aex) {
