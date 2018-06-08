@@ -10,8 +10,8 @@ public class EBayTestingApp {
         final WebDriver driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
         driver.get("https://www.ebay.com");
 
-        final WebElement iteamSerachField = driver.findElement(By.name("_nkw"));
-        iteamSerachField.sendKeys("Laptop");
-        iteamSerachField.submit();
+        final WebElement iteamSearchField = driver.findElement(By.name("_nkw"));
+        iteamSearchField.sendKeys("Laptop");
+        iteamSearchField.submit();
     }
 }
